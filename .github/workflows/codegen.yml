@@ -31,15 +31,15 @@ jobs:
 
       - name: Generate natives
         run: |
-          wget https://github.com/communityox/rage-lua-natives/archive/master.zip -O repo.zip
+          wget https://github.com/communityox/rage-lua-natives/archive/main.zip -O repo.zip
           unzip repo.zip
-          cd rage-lua-natives-master
+          cd rage-lua-natives-main
           bun install --frozen-lockfile
           bun run start
           cd ..
           rm -rf library/natives/*
-          mv -f rage-lua-natives-master/build/cfx/{CFX-NATIVE,GTAV,RDR3} library/natives/
-          rm -rf rage-lua-natives-master
+          mv -f rage-lua-natives-main/build/cfx/{CFX-NATIVE,GTAV,RDR3} library/natives/
+          rm -rf rage-lua-natives-main
           rm repo.zip
 
       - name: Update repository
